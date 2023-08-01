@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: UNLICENSED;
 
 pragma solidity ^0.8.0;
 
@@ -23,6 +23,8 @@ contract Transaction {
     function addToBlockchain(address payable receiver, uint amount, string memory message, string memory keyword) public {
        transactionCount += 1;
        transactions.push(TransferStruct(msg.sender, receiver, amount, message, keyword, block.timestamp));
+
+       emit Transfer(msg.sender, receiver, amount, message, keyword, block.timestamp);
     }
 
     function getAllTransactions() public view returns(TransferStruct[] memory ) {
