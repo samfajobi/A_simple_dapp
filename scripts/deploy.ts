@@ -14,7 +14,6 @@ async function main() {
   const address = await transactions.getAddress();
   console.log(`Your transaction has been deployed to: ${address}`)
 
-  //return transactions;
 }
 
 // We recommend this pattern to be able to use async/await everywhere
